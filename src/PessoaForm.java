@@ -45,10 +45,11 @@ public class PessoaForm extends JPanel {
 
         GridBagConstraints gc = new GridBagConstraints();
 
+        // linhas e colunas tem o mesmo peso (mesma altura e largura)
         gc.weightx = 0.5;
         gc.weighty = 0.5;
 
-        gc.anchor = GridBagConstraints.LINE_END;
+        gc.anchor = GridBagConstraints.LINE_END;   // componentes alinhados à direita
         gc.gridx = 0;
         gc.gridy = 0;
         add(nomeLabel, gc);
@@ -57,7 +58,7 @@ public class PessoaForm extends JPanel {
         gc.gridy = 1;
         add(emailLabel, gc);
 
-        gc.anchor = GridBagConstraints.LINE_START;
+        gc.anchor = GridBagConstraints.LINE_START; // componentes alinhados à esquerda
         gc.gridx = 1;
         gc.gridy = 0;
         add(nomeTextField, gc);
@@ -66,8 +67,8 @@ public class PessoaForm extends JPanel {
         gc.gridy = 1;
         add(emailTextField, gc);
 
-        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-        gc.weighty = 10;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START; // componentes alinhados à esquerda e no topo
+        gc.weighty = 10;   // linha mas alta que as demais (faz as demais diminuírem)
         gc.gridx = 1;
         gc.gridy = 2;
         add(adicionarButton, gc);

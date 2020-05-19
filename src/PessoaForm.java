@@ -25,15 +25,21 @@ public class PessoaForm extends JPanel {
 
         adicionarButton.addActionListener(evt -> {
 
+            // ao clicar em adicionar...
+
+            // pega os dados que o usuário digitou...
             String nome = nomeTextField.getText();
             String email = emailTextField.getText();
 
+            // cria um objeto pessoa
             Pessoa pessoa = new Pessoa(nome, email);
 
+            // cria um evento 'pessoa foi adicionada'...
             PessoaFoiAdicionada evento = new PessoaFoiAdicionada();
-            evento.setPessoa(pessoa);
+            evento.setPessoa(pessoa);  // seta a pessoa que foi adicionada
 
-            EventBus.getDefault().post(evento);
+            EventBus.getDefault().post(evento); // envia o evento ao eventbus
+            // quem assinar esse evento irá recebê-lo (no caso, o painel com a tabela)
 
         });
 

@@ -9,15 +9,15 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);  // centraliza janela na tela
 
         Container container = getContentPane();
 
-        PessoaForm form = new PessoaForm();
-        PessoaLista  lista = new PessoaLista();
+        PessoaForm form = new PessoaForm();  // formulário de pessoas
+        PessoaLista  lista = new PessoaLista();  // tabela de pessoas
 
-        container.add(form, BorderLayout.WEST);
-        container.add(lista, BorderLayout.EAST);
+        container.add(form, BorderLayout.WEST);  // formulário à esquerda
+        container.add(lista, BorderLayout.EAST); // tabela à direita
 
         setVisible(true);
 

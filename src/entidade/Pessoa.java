@@ -1,3 +1,5 @@
+package entidade;
+
 public class Pessoa {
 
     private String nome;

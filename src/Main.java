@@ -1,4 +1,4 @@
-import javax.swing.*;
+import visao.MainFrame;
 
 public class Main {
 

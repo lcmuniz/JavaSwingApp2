@@ -82,6 +82,8 @@ public class PessoaForm extends  JPanel {
 
     }
 
+    // metodo a ser execugtado quando o usuario clicar no
+    // botao Adicionar (Salvar)
     private final ActionListener aoAdicionarPessoa = evt -> {
 
         // ao clicar em adicionar...
@@ -98,10 +100,12 @@ public class PessoaForm extends  JPanel {
         Pessoa pessoa = new Pessoa(nome, email);
 
         if (adicionarButton.getText().equals("Adicionar")) {
+            // clicou em Adicionar, emite o evento PessoaFoiAdicionada
             PessoaFoiAdicionada evento = new PessoaFoiAdicionada(pessoa);
             EventBus.getDefault().post(evento);
         }
         else {
+            // clicou em Salvar, emite o evento PessoaFoiAlterada
             PessoaFoiAlterada evento = new PessoaFoiAlterada(pessoa);
             EventBus.getDefault().post(evento);
             adicionarButton.setText("Adicionar");
@@ -115,7 +119,10 @@ public class PessoaForm extends  JPanel {
 
     };
 
+    // metodo a ser executado quando o usuario clicar no
+    // botão Excluir
     private final ActionListener aoExcluirPessoa = evt -> {
+
         String nome = nomeTextField.getText();
         String email = emailTextField.getText();
         Pessoa pessoa = new Pessoa(nome, email);
@@ -129,6 +136,8 @@ public class PessoaForm extends  JPanel {
 
     };
 
+    // metodo a ser executado quando um evento PessoaFoiSelecioanada
+    // for incluido no EventBus
     @Subscribe
     public void on(PessoaFoiSelecionada evento) {
         nomeTextField.setText(evento.getPessoa().getNome());

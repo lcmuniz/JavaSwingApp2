@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setJMenuBar(new MenuBar());
+        setJMenuBar(new MenuBar()); // seta menu da aplicação
 
         Container container = getContentPane();
 

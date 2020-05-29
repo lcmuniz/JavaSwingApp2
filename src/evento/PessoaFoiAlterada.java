@@ -3,13 +3,13 @@ package evento;
 import entidade.Pessoa;
 
 /*
-Evento que deve ser coloca no eventbus quando
-uma pessoa for adicionada (o usuario clicar
-no botao Adicionar de visao.PessoaForm
+Evento que deve ser colocado no eventbus quando
+uma pessoa for alterada (o usuario selecionar
+uma pessoa em PessoaLista
  */
 public class PessoaFoiAlterada {
 
-    // pessoa que foi adicionada
+    // pessoa que foi alterada
     private Pessoa pessoa;
 
     public PessoaFoiAlterada(Pessoa pessoa) {

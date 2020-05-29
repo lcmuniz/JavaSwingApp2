@@ -45,6 +45,7 @@ public class PessoaLista extends JPanel {
 
     }
 
+    // metodo a ser executado quando o usuário selecionar uma linha na tabela de pessoas
     private final MouseListener aoSelecionarPessoa = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -66,12 +67,16 @@ public class PessoaLista extends JPanel {
         }
     };
 
+    // metodo a ser executado quando um evento PessoaFoiAdicionada
+    // for incluido no EventBus
     @Subscribe
     public void on(PessoaFoiAdicionada evento) {
         Pessoa pessoa = evento.getPessoa();
         model.addRow( new String[] {pessoa.getNome(), pessoa.getEmail()});
     }
 
+    // metodo a ser executado quando um evento PessoaFoiAlterada
+    // for incluido no EventBus
     @Subscribe
     public void on(PessoaFoiAlterada evento) {
         Pessoa pessoa = evento.getPessoa();
@@ -80,6 +85,8 @@ public class PessoaLista extends JPanel {
         model.addRow( new String[] {pessoa.getNome(), pessoa.getEmail()});
     }
 
+    // metodo a ser executado quando um evento PessoaFoiExcluida
+    // for incluido no EventBus
     @Subscribe
     public void on(PessoaFoiExcluida evento) {
         Pessoa pessoa =evento.getPessoa();
